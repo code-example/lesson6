@@ -5,7 +5,6 @@
 		echo '</pre>';
 	}
 	function main_function(string $str) {
-		$desc = fopen("example.txt", "r+", false);
 		$ini = parse_ini_file('php.ini', true, INI_SCANNER_NORMAL);
 		$list = file("example.txt");
 
@@ -33,7 +32,6 @@
 				$list[$i] = str_replace($ini['third_rule']['delete'], '', $list[$i]);
 			echo $list[$i].'<br>';
 		}
-		fclose($desc);
 	}
 	if(1 || isset($_POST['_area']))
 		main_function($_POST['_area']);
